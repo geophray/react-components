@@ -1,19 +1,20 @@
-// TODO
-var items = ['Milk', 'Bread'];
+
 var GroceryListItem = (props) => (
-  <li>{props[0]}</li>
+    <li>{props.item}</li>
 );
 
 var GroceryList = (props) => (
   <ul>
-    <GroceryListItem />
+    {props.array.map(item =>
+       <GroceryListItem item={item} />
+    )}
   </ul>
 );
 
 var App = () => (
   <div>
     <h2>My Todo List</h2>
-    <GroceryList />
+    <GroceryList array={['milk', 'eggs', 'bananas', 'bread', 'cheese']}/>
   </div>
 );
 
